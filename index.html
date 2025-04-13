@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Amazing Jasmine dd! ✨</title>
+    <style>
+        /* Cosmic Stardust Background */
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #1a1a4a 0%, #000033 100%);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: shoot 5s linear infinite;
+        }
+        @keyframes shoot {
+            0% { transform: translate(0,0); opacity: 1; }
+            100% { transform: translate(1000px, 500px); opacity: 0; }
+        }
+
+        /* Main Content */
+        .container {
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Holographic Text Effect */
+        .holographic-text {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+            animation: rainbow 8s ease infinite;
+            margin-bottom: 30px;
+        }
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* Portal Button */
+        .portal-btn {
+            padding: 18px 45px;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .portal-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 35px #ff00ff, 0 0 70px #00ffff;
+        }
+        .portal-btn:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+            z-index: -1;
+        }
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Floating Notebooks */
+        .floating-book {
+            position: absolute;
+            font-size: 3rem;
+            animation: float 8s infinite ease-in-out;
+            z-index: 5;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-150px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Shooting Stars Background -->
+    <div id="stars-container"></div>
+
+    <!-- Floating Books -->
+    <div id="books-container"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="holographic-text">GOOD LUCK😊, SUPERSTAR!💐
+            FOR YOUR SLC EXAM🤍
+        </h1>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.5rem; max-width: 800px; margin: 0 auto 40px;">
+            Dear sister, malai tha x hjr la SLC exam ma dherai ramro garnu hunx!<br>
+            hamilai tha x hjr la dherai hardwork😮‍💨ra ramro sanga padnu vako x AND you're going to crush it!🫡
+        </p>
+        <button class="portal-btn" onclick="window.location.href='motivation.html'">
+            yeta👀click garnus hjr😅 ➔
+        </button>
+    </div>
+
+    <script>
+        // Create shooting stars
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 20; i++) {
+                const star = document.createElement('div');
+                star.className = 'shooting-star';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.animationDuration = 3 + Math.random() * 7 + 's';
+                container.appendChild(star);
+            }
+        }
+
+        // Create floating books
+        function createBooks() {
+            const container = document.getElementById('books-container');
+            const books = ['📚', '📖', '📘', '📙', '📕', '📗', '📓', '📔'];
+            for (let i = 0; i < 10; i++) {
+                const book = document.createElement('div');
+                book.className = 'floating-book';
+                book.textContent = books[Math.floor(Math.random() * books.length)];
+                book.style.left = Math.random() * 100 + 'vw';
+                book.style.top = Math.random() * 100 + 'vh';
+                book.style.animationDelay = Math.random() * 5 + 's';
+                book.style.animationDuration = 5 + Math.random() * 10 + 's';
+                container.appendChild(book);
+            }
+        }
+
+        // Initialize effects
+        window.onload = function() {
+            createStars();
+            createBooks();
+        };
+    </script>
+</body>
+</html>
